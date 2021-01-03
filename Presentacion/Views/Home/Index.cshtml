@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Entidad.Poliza>;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table table-striped dark">    
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m=>m.Id)</th>            
+            <th>@Html.DisplayNameFor(m=>m.NombreTitular)</th>            
+            <th>@Html.DisplayNameFor(m=>m.PensionInicial)</th>            
+            <th>@Html.DisplayNameFor(m=>m.FechaDevengue)</th>
+            <th>@Html.DisplayNameFor(m=>m.PensionCalculada)</th>
+        </tr>
+    </thead>    
+    <tbody>
+        @foreach (var item in Model)    
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.NombreTitular</td>
+                <td>@item.PensionInicial</td>
+                <td>@item.FechaDevengue</td>
+                <td>@item.PensionCalculada</td>
+            </tr>
+        }
+    </tbody>    
+</table>
+
+<a asp-action="CalcularPension" class="btn btn-success"> Calcular Pensión </a>
